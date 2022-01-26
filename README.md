@@ -14,7 +14,7 @@ http://hpc.sagepub.com/cgi/content/abstract/23/1/42
 2. The associated Ph.D. Thesis:
 OpenDDA: A Novel High-Performance Computational Framework for the Discrete Dipole Approximation, Mc Donald, J., Ph.D. Thesis, School of Physics, National University of Ireland, Galway, Ireland, September 2007. https://github.com/drjmcdonald/OpenDDA/blob/main/thesis_phd_OpenDDA_2007.pdf
 
-There are 9 different LINUX versions of the OpenDDA framework; 3 different architecture specific versions, i.e., serial, OpenMP & MPI, each with 3 precision specific variants, i.e., float, double and long double.
+There are 9 different LINUX versions of the OpenDDA framework; 3 different architecture specific versions, i.e., serial, OpenMP & MPI, each with 3 precision specific variants, i.e., float, double & long double.
 
 OpenDDA_S is the basic serial implementation
 
