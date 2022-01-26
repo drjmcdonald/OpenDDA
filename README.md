@@ -20,7 +20,7 @@ OpenDDA_S is the basic serial implementation
 
 OpenDDA_OMP is the OpenMP-based shared-memory implementation
 
-OpenDDA_MPI is the MPI-based distributed-memory implementation.
+OpenDDA_MPI is the MPI-based distributed-memory implementation
 
 The WINDOWS versions (Visual Studio 2008 project) exist in SERIAL implmentations only (float, double and long double). N.B. Note that these WINDOWS versions are completely untested, and have been supplied, including fftw-3.3.2-dll32, for convenience as a starting point.
 
