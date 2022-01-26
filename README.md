@@ -24,6 +24,6 @@ OpenDDA_MPI is the MPI-based distributed-memory implementation.
 
 The WINDOWS versions (Visual Studio 2008 project) exist in SERIAL implmentations only (float, double and long double).
 
-N.B. Note that these are completely untested, and have been supplied for convenience as a starting point.
+N.B. Note that these are completely untested, and have been supplied, including fftw-3.3.2-dll32, for convenience as a starting point.
 
 For the WINDOWS versions, the executable is NOT in the source directory. It is created in the Debug or Release directory as appropriate. The ".input" files MUST be modified in this Debug or Release directory as appropriate.
