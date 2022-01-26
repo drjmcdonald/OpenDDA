@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opendda_S_double", "opendda_S_double\opendda_S_double.vcproj", "{64C2B2E5-9D9C-4EA7-8B10-F6DDE065A3AF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "guesstimate_S_double", "guesstimate_S_double\guesstimate_S_double.vcproj", "{9535E07E-D17A-4516-A799-E9D0D3AA4A5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64C2B2E5-9D9C-4EA7-8B10-F6DDE065A3AF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{64C2B2E5-9D9C-4EA7-8B10-F6DDE065A3AF}.Debug|Win32.Build.0 = Debug|Win32
+		{64C2B2E5-9D9C-4EA7-8B10-F6DDE065A3AF}.Release|Win32.ActiveCfg = Release|Win32
+		{64C2B2E5-9D9C-4EA7-8B10-F6DDE065A3AF}.Release|Win32.Build.0 = Release|Win32
+		{9535E07E-D17A-4516-A799-E9D0D3AA4A5B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9535E07E-D17A-4516-A799-E9D0D3AA4A5B}.Debug|Win32.Build.0 = Debug|Win32
+		{9535E07E-D17A-4516-A799-E9D0D3AA4A5B}.Release|Win32.ActiveCfg = Release|Win32
+		{9535E07E-D17A-4516-A799-E9D0D3AA4A5B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

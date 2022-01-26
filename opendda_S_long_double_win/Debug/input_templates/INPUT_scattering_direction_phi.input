@@ -1,0 +1,19 @@
+# Scattering direction - Spherical coodinates - Azimuthal angle phi
+# The azimuthal angle phi is the clockwise angle [0,2pi], in the [x_{L}y_{L}]-plane,
+# between the scattering plane and the +x_{L}-axis looking in the +z_{L}-axis direction
+# i.e. the angle between the scattering plane and the xz-plane. The scattering plane is
+# the plane containing the incident direction and the scattering direction [+z_{L}-axis
+# & n_{sca}]), phi=0 => scattering plane=xz-plane, phi=90 => scattering plane=yz-plane
+# Notes: (1) Must be positive and monotonically increasing
+0.0
+30.0
+60.0
+90.0
+120.0
+150.0
+180.0
+210.0
+240.0
+270.0
+300.0
+330.0

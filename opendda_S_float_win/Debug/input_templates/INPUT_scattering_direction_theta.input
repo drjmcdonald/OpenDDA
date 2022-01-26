@@ -1,0 +1,10 @@
+# Scattering direction - Spherical coodinates - Polar/zenith angle theta
+# The polar/zenith angle theta is the angle [0,pi], in the scattering plane,
+# between the incident direction +z_{L}-axis and the scattering direction n_{sca}
+# theta=0 => forward scattering, scattering direction=+z_{L} axis
+# theta=180 => backward scattering, scattering direction=-z_{L} axis
+# Notes: (1) Must be positive and monotonically increasing
+0.0
+30.0
+60.0
+90.0

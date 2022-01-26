@@ -1,0 +1,19 @@
+# 3rd Euler angle - psi - Azimuthal angle - [0,2pi]
+# The clockwise angle [0,2pi] in the [x^{theta}y^{theta}]-plane around
+# the z^{theta}-axis looking in the +z^{theta}-axis direction
+# Notes: (1) Must be positive and monotonically increasing
+0.0
+25.0
+50.0
+75.0
+100.0
+125.0
+150.0
+175.0
+200.0
+225.0
+250.0
+275.0
+300.0
+325.0
+350.0

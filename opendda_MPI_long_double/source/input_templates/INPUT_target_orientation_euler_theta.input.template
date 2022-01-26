@@ -1,0 +1,27 @@
+# 2nd Euler angle - theta - Polar/zenith angle - [1,-1] i.e. [0,pi]
+# The clockwise angle [0,pi] in the [x^{phi}z^{phi}]-plane around
+# the y^{phi}-axis looking in the +y^{phi}-axis direction
+# Notes: (1) The Euler angles phi and psi are azimuthal angles, the clockwise
+#            angle [0,2pi] in the xy-plane around the z-axis looking in the
+#            +z-axis direction, which define longitudes. However, theta is a
+#            polar/zenith angle [0,pi] and defines latitudes. Thus, for
+#            intergration over the sphere, the integration element is
+#            d[omega]=sin[theta]d[phi]d[theta]d[psi]=d[phi]d[cos(theta)]d[psi]
+#            and distribution must be done via [-1 < cos(theta) < 1] where the
+#            total area in (cos(theta),phi) is 4*pi
+#        (2) Must be monotonically increasing
+-1.00
+-0.86
+-0.72
+-0.58
+-0.44
+-0.30
+-0.16
+-0.02
+0.12
+0.26
+0.40
+0.54
+0.68
+0.82
+0.96

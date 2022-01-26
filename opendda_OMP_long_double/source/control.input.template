@@ -1,0 +1,224 @@
+# Written by James Mc Donald 2006
+#   [Antispam: email in reverse] ei.yawlagiun.ti@semaj
+#
+#   Input control file
+#
+#   Copyright (C) 2006 James Mc Donald,
+#   Computational Astrophysics Laboratory,
+#   National University of Ireland, Galway
+#   This code is covered by the GNU General Public License
+#
+#   Notes: (1) Best edited with GVIM [uses different colours for comments & parameters]
+#          (2) Do not modify (in any way!) the description strings, i.e., everything up
+#              to and including the '='
+#          (3) Do not leave blank lines, use the comment symbol '#'
+#          (4) Complex numbers can be given in any of the following forms
+#                 1.63631+0.372i OR 1.63631+0.372I OR 1.63631+0.372 OR
+#                 1.63631,0.372i OR 1.63631,0.372I OR 1.63631,0.372
+#          (5) The order of the input sections is arbitrary except for the following:
+#              (a) The material properties "Material `#'= MUST be directly after
+#                  the line "Number of dielectric materials for the target="
+#
+# *************************************************************************************
+# Incident wavelengths=minimum,increment,maximum - [micrometres]
+# Notes: (a) If the file 'INPUT_wavelength.input' exists then the wavelength data is
+#            read in from that file and these values are ignored
+#        (b) For 1 wavelength set minimum=maximum=wavelength and set increment=0.0
+Wavelengths='3.175,0.0,3.175'
+#
+# *************************************************************************************
+# Incident polarisation - described via the normalised Jones vector [E_{x},E_{y},0]
+#
+# e_{0}=[x_{real}+x_{imag}i,y_{real}+y_{imag}i,0.0+0.0i],yes/no
+# yes/no: whether to include calculations for the orthonormal polarisation state
+#
+# Notes: (a) Defined looking in the direction of propagation i.e. +z-axis
+#        (b) z component should be ZERO ALWAYS!
+#        (c) Normalisation is performed automatically by the code
+#        (d) If required, the orthonormal polarisation state is automatically generated
+#
+# Linear x-polarised [1.0+0.0i,0.0+0.0i,0.0+0.0i]
+# Linear y-polarised [0.0+0.0i,1.0+0.0i,0.0+0.0i]
+# Linear +45°-polarised [1.0+0.0i,1.0+0.0i,0.0+0.0i]
+# Linear -45°-polarised [1.0+0.0i,-1.0+0.0i,0.0+0.0i]=[-1.0+0.0i,1.0+0.0i,0.0+0.0i]
+# Left-circularly polarised [1.0+0.0i,0.0-1.0i,0.0+0.0i]=[0.0+1.0i,1.0+0.0i,0.0+0.0i]
+# Right-circularly polarised [1.0+0.0i,0.0+1.0i,0.0+0.0i]=[0.0-1.0i,1.0+0.0i,0.0+0.0i]
+Incident polarisation e0='[1.0+0.0i,0.0+0.0i,0.0+0.0i],no'
+#
+# *************************************************************************************
+# Effective radii=minimum,increment,maximum - [micrometres]
+# Notes: (a) If the file 'INPUT_effective_radius.input' exists then the radius data is
+#            read in from that file and these values are ignored
+#        (b) For 1 radius set minimum=maximum=radius and set increment=0.0
+Effective radii='0.5,0.0,0.5'
+#
+# *************************************************************************************
+# Target shape and construction parameters where [K,J,P] are the integer
+# [x,y,z]-dimensions of the dipole array
+#
+# Shapes: (a) ellipsoid:        Shape='ellipsoid,K,J,P,NULL,NULL,NULL'
+#         (b) cuboid:           Shape='cuboid,K,J,P,NULL,NULL,NULL'
+#         (c) custom from file: Shape='valid_target_file_name,K,J,P,NULL,NULL,NULL'         
+Shape='ellipsoid,10,10,10,NULL,NULL,NULL'
+#
+# *************************************************************************************
+# The number of dielectric materials for the target [MAX=unlimited] and the
+# corresponding complex refractive indices, m=n+ki, for the target
+# 0..(number_of_dielectric_materials-1)
+#
+# Notes: (a) For each material j=0..(number_of_dielectric_materials-1), if the file
+#            INPUT_refractive_index_vs_wavelength_material_`j'.input exists then the
+#            complex refractive index versus wavelength data is read in from that file
+#            for subsequent interpolation & the value for material `j' here is ignored
+Number of dielectric materials for the target='1'
+Material 0='1.63631+0.372i'
+Material 1='NULL'
+Material 2='NULL'
+Material 3='NULL'
+Material 4='NULL'
+Material 5='NULL'
+Material 6='NULL'
+Material 7='NULL'
+Material 8='NULL'
+Material 9='NULL'
+Material 10='NULL'
+Material 11='NULL'
+Material 12='NULL'
+Material 13='NULL'
+Material 14='NULL'
+Material 15='NULL'
+#
+# *************************************************************************************
+# Target orientations(phi,theta,psi)=minimum,increment,maximum
+# Euler angles [ZYZ Moving angles of rotation]. Azimuthal angle phi about z_{L},
+# polar/zenith angle theta about y^{phi} and azimuthal angle psi about z^{theta}
+#
+# phi:   1st Euler angle phi: Azimuthal angle [0,2pi]. The clockwise angle in the
+#        [x_{L}y_{L}]-plane about the z_{L}-axis looking in the +z_{L} direction
+# theta: 2st Euler angle theta: Polar/zenith angle [1,-1] i.e. [0,pi]. The clockwise
+#        angle in the [x^{phi}z^{phi}]-plane about the y^{phi}-axis looking in the
+#        +y^{phi}-axis direction
+# psi:   3rd Euler angle psi: Azimuthal angle [0,2pi]. The clockwise angle in the
+#        [x^{theta}y^{theta}]-plane about the z^{theta}-axis looking in the
+#        +z^{theta}-axis direction
+# 
+# Notes: (a) The Euler angles phi and psi are azimuthal angles, the clockwise
+#            angle [0,2pi] in the xy-plane around the z-axis looking in the
+#            +z-axis direction, which define longitudes. However, theta is a
+#            polar/zenith angle [0,pi] and defines latitudes. Thus, for
+#            integration over the sphere, the integration element is
+#            d[omega]=sin[theta]d[phi]d[theta]d[psi]=d[phi]d[cos(theta)]d[psi]
+#            and distribution must be done via [-1 < cos(theta) < 1] where the
+#            total area in (cos(theta),phi) is 4*pi
+#        (b) If the file 'INPUT_target_orientation_euler_phi.input' exists then the 
+#            Euler phi data is read in from that file and these values are ignored
+#        (b) If the file 'INPUT_target_orientation_euler_theta.input' exists then the
+#            Euler theta data is read in from that file and these values are ignored
+#        (d) If the file 'INPUT_target_orientation_euler_psi.input' exists then the
+#            Euler psi data is read in from that file and these values are ignored
+#        (e) For 1 value set [minimum=maximum=value] and set increment=0.0
+#        (f) phi & psi MUST be positive and monotonically increasing
+#        (g) theta MUST be monotonically increasing
+Euler phi='25.0,0.0,25.0'
+Euler theta='0.5735764364,0.0,0.5735764364'
+Euler psi='80.0,0.0,80.0'
+#
+# *************************************************************************************
+# Scattering directions using the spherical coordinates phi and theta
+# (phi,theta)=minimum,increment,maximum
+#
+# The azimuthal angle phi is the clockwise angle [0,2pi], in the [x_{L}y_{L}]-plane,
+# between the scattering plane and the +x_{L}-axis looking in the +z_{L}-axis direction
+# i.e. the angle between the scattering plane and the xz-plane. The scattering plane is
+# the plane containing the incident direction and the scattering direction [+z_{L}-axis
+# & n_{sca}]), phi=0 => scattering plane=xz-plane, phi=90 => scattering plane=yz-plane
+#
+# The polar/zenith angle theta is the angle [0,pi], in the scattering plane,
+# between the incident direction +z_{L}-axis and the scattering direction n_{sca}
+# theta=0 => forward scattering, scattering direction=+z_{L} axis
+# theta=180 => backward scattering, scattering direction=-z_{L} axis
+#
+# Notes: (a) If the file 'INPUT_scattering_direction_phi.input' exists then the phi data
+#            is read in from that file and these values are ignored
+#        (b) If the file 'INPUT_scattering_direction_theta.input' exists then the theta
+#            data is read in from that file and these values are ignored
+#        (c) For 1 phi set minimum=maximum=phi and set increment=0.0
+#        (d) For 1 theta set minimum=maximum=Euler theta and set increment=0.0
+#        (e) Must be positive and monotonically increasing
+Scattering angle phi='45.0,0.0,45.0'
+Scattering angle theta='30.0,0.0,30.0'
+#
+# *************************************************************************************
+# Iterative scheme control parameters
+#
+# Iterative scheme and number of starting vectors
+# (1) bicg,NULL         BiConjugate-Gradients
+# (2) bicg_sym,NULL     BiConjugate-Gradients for symmetric systems
+# (3) bicgstab,NULL     Stabilised version of the BiConjugate-Gradients
+# (4) cg,NULL           Conjugate-Gradients
+# (5) cgs,NULL          Conjugate-Gradients Squared
+# (6) mlbicgstab_orig,X BiCGSTAB variant based on multiple Lanczos starting vectors
+#                          (Author's original algorithm)
+# (7) mlbicgstab,X      BiCGSTAB variant based on multiple Lanczos starting vectors
+#                          (Author's reformulation)
+# (8) mlbicgstab_ss,X   BiCGSTAB variant based on multiple Lanczos starting vectors
+#                          (Author's space saving algorithm)
+# (9) qmr,NULL          Quasi-minimal residual with coupled two-term recurrences
+# (10) qmr_sym,NULL     Quasi-minimal residual for symmetric systems
+# (11) rbicgstab,X      Restarted, stabilised version of the BiConjugate-Gradients      
+# (12) tfqmr,NULL       Transpose-free quasi-minimal residual
+#
+# Notes: (a) Number of starting vectors 'X' is only relevant for (6), (7), (8) & (11)
+Iterative scheme='bicgstab,NULL'
+# Iterative scheme - Convergence tolerance
+Convergence tolerance='1e-10'
+# Iterative scheme - Breakdown tolerance
+Breakdown tolerance='1e-50'
+# Iterative scheme - Maximum number of iterations
+Maximum number of iterations='10000'
+# Iterative scheme - Initial guess
+# 0: set x=0
+# 1: set x=1
+# 2: set x=b i.e. incident electric-field
+# 3: set x=(1/polarisability)
+Initial guess='0'
+# Iterative scheme - Preconditioning
+# 0: None
+# 1: Point-Jacobi
+Preconditioning='1'
+#
+# *************************************************************************************
+# Degree of the interpolating polynomial for the improved Akima method
+# Default=3, the degree of the polynomials for the interpolating function, the default
+# is cubic to preserve the accuracy of a 3rd-degree polynomial, however, higher degree
+# polynomials, which can reduce undulations, can be used at the expense of the
+# 3rd-order accuracy.
+# Notes: (a) Cannot foresee a circumstance that would require degree!=3
+Polynomial degree='3'
+#
+# *************************************************************************************
+# VTK data output. Print out the target xyz coordinate data to a vtk file for 3D
+# visualisation of the target using a GUI like Paraview
+# Notes: (a) 0: Disabled 1: Enabled
+VTK target xyz coordinate data='0'
+#
+# *************************************************************************************
+# Timing. Output the overall program runtime and timings for the iterative kernel & the
+# individual components of the DFT engine to the file OUPUT_program_execution.info
+# Notes: (a) 0: Disabled 1: Enabled
+#        (b) Safe to leave enabled as the timing overheads are negligible 
+Timing='1'
+#
+# *************************************************************************************
+# Number of significant digits for the program output. If this is set to ZERO then the
+# code uses the predefined values DBL_DIG and LDBL_DIG which are the number of
+# significant digits for the double and long double data types, respectively
+Output precision [DOUBLE,LONG DOUBLE]='[0,0]'
+#
+# *************************************************************************************
+# Number of OpenMP threads. The number of threads for the parallel regions. If set to 0
+# here then the number of threads available is determined automatically by OpenMP.
+# Notes: (a) If the value is invalid [i.e < 0 OR > (number of threads available)], it
+#            is ignored and the number of threads is determined automatically by OpenMP
+#        (b) Number of threads used is output to the file OUPUT_program_execution.info
+OpenMP threads='4'
