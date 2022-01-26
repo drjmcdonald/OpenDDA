@@ -14,12 +14,12 @@ http://hpc.sagepub.com/cgi/content/abstract/23/1/42
 2. The associated Ph.D. Thesis:
 OpenDDA: A Novel High-Performance Computational Framework for the Discrete Dipole Approximation, Mc Donald, J., Ph.D. Thesis, School of Physics, National University of Ireland, Galway, Ireland, September 2007. https://github.com/drjmcdonald/OpenDDA/blob/main/thesis_phd_OpenDDA_2007.pdf
 
-There are 9 different LINUX versions of the OpenDDA framework:
-
-3 different architecture specific versions (each with 3 precision specific variants, i.e., float, double and long double):
+There are 9 different LINUX versions of the OpenDDA framework; 3 different architecture specific versions, i.e., serial, OpenMP & MPI, each with 3 precision specific variants, i.e., float, double and long double.
 
 OpenDDA_S is the basic serial implementation
+
 OpenDDA_OMP is the OpenMP-based shared-memory implementation
+
 OpenDDA_MPI is the MPI-based distributed-memory implementation.
 
 The WINDOWS versions (Visual Studio 2008 project) exist in SERIAL implmentations only (float, double and long double). N.B. Note that these WINDOWS versions are completely untested, and have been supplied, including fftw-3.3.2-dll32, for convenience as a starting point.
