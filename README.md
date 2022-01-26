@@ -12,7 +12,7 @@ OpenDDA: A Novel High-Performance Computational Framework for the Discrete Dipol
 http://hpc.sagepub.com/cgi/content/abstract/23/1/42
 
 2. The associated Ph.D. Thesis:
-OpenDDA: A Novel High-Performance Computational Framework for the Discrete Dipole Approximation, Mc Donald, J., Ph.D. Thesis, School of Physocs, National University of Ireland, Galway, Ireland, September 2007.
+OpenDDA: A Novel High-Performance Computational Framework for the Discrete Dipole Approximation, Mc Donald, J., Ph.D. Thesis, School of Physics, National University of Ireland, Galway, Ireland, September 2007.
 
 There are 9 different LINUX versions of the OpenDDA framework
 
